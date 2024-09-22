@@ -17,7 +17,7 @@ services:
       - ROS_DISTRO=noetic
     #command: /bin/bash -c "source /opt/ros/noetic/setup.bash && source /catkin_ws/devel/setup.bash && bash"
     #command: python3 "server.py"
-    command: /bin/bash -c "bash"
+    command: /bin/bash
     
   picamera:
     build:
@@ -31,7 +31,7 @@ services:
     tty: true
     privileged: true
     #command: python3 "client.py"
-    command: /bin/bash -c "bash"
+    command: /bin/bash
 
 volumes:
   shared-volume:
