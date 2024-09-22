@@ -15,13 +15,13 @@ RUN apt update && apt install -y --no-install-recommends \
      && rm -rf /var/cache/apt/archives/* \
      && rm -rf /var/lib/apt/lists/*
 
-COPY requirements_camera.txt .
+COPY picam/requirements_camera.txt .
 
 # Install Python dependencies (opencv-python-headless)
 RUN pip install --break-system-packages --no-cache-dir -r requirements_camera.txt
 
 WORKDIR /
 
-COPY client.py ./client.py
+COPY picam/client.py .
 
 #CMD ["python3", "client.py"]

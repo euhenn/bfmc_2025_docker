@@ -15,7 +15,7 @@ RUN apt-get update && \
 #  catkin_make
 
 
-COPY requirements.txt .
+COPY noetic/requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 RUN mkdir -p /catkin_ws/src/ws_2024
@@ -23,7 +23,7 @@ RUN mkdir -p /catkin_ws/src/ws_2024
 WORKDIR /
 
 
-COPY mainbrain.sh ./mainbrain.sh
+COPY /noetic/mainbrain.sh .
 
 
 #CMD ["/bin/bash", "-c", "source /opt/ros/$ROS_DISTRO/setup.bash && source /catkin_ws/devel/setup.bash"]
